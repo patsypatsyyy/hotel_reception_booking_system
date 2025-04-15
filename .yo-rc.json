@@ -1,0 +1,18 @@
+{
+  "generator-ui5-app": {
+    "namespace": "personal.patsy.hotel",
+    "framework": "SAPUI5",
+    "frameworkVersion": "1.134.1",
+    "author": "Dre",
+    "initrepo": true,
+    "appId": "personal.patsy.hotel",
+    "appURI": "personal/patsy/hotel",
+    "cdnDomain": "ui5.sap.com",
+    "defaultTheme": "sap_horizon",
+    "qunitCoverageFile": "qunit-coverage-istanbul.js",
+    "gte1_98_0": true,
+    "gte1_104_0": true,
+    "lt1_124_0": false,
+    "setupCompleted": true
+  }
+}
