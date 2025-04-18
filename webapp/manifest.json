@@ -70,19 +70,29 @@
 				"viewType": "XML",
 				"viewPath": "personal.patsy.hotel.view",
 				"controlId": "app",
-				"controlAggregation": "pages"
+				"controlAggregation": "pages",
+				"transition": "fade"
 			},
 			"routes": [
 				{
-					"pattern": "",
-					"name": "main",
-					"target": "main"
+					"pattern": "login",
+					"name": "login",
+					"target": "login"
+				},
+				{
+					"pattern": "homepage",
+					"name": "homepage",
+					"target": "homepage"
 				}
 			],
 			"targets": {
-				"main": {
-					"viewId": "main",
-					"viewName": "Main"
+				"login": {
+					"viewId": "login",
+					"viewName": "Login"
+				},
+				"homepage": {
+					"viewId": "homepage",
+					"viewName": "HomePage"
 				}
 			}
 		}

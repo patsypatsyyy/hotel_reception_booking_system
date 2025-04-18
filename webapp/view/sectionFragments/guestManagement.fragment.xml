@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<core:FragmentDefinition xmlns:f="sap.f"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:card="sap.f.cards"
+    xmlns:tnt="sap.tnt"
+    xmlns:u="sap.ui.unified"
+    xmlns:layout="sap.ui.layout">
+    <Panel>
+        <VBox >
+            <Title text="Guest Management" titleStyle="H4" textAlign="Center" width="100%" class="sapUiSmallMarginBottom"></Title>
+            <layout:Grid defaultSpan="XL4 L4 M4 S12" hSpacing="1" vSpacing="1">
+                <layout:content>
+                    <GenericTile header="New Guest Check-in" headerImage="sap-icon://add-employee" frameType="OneByHalf" width="100%"></GenericTile>
+                    <GenericTile header="Guest Check-out" headerImage="sap-icon://appear-offline" frameType="OneByHalf" width="100%"></GenericTile>
+                    <GenericTile header="Guest Profiles" headerImage="sap-icon://employee-lookup" frameType="OneByHalf" width="100%"></GenericTile>
+                </layout:content>
+            </layout:Grid>
+        </VBox>
+    </Panel>
+</core:FragmentDefinition>
