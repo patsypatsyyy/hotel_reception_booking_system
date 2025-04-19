@@ -10,10 +10,16 @@
     <Page id="homePage" title="Home Page">
         <customHeader>
             <Bar>
-                <!-- <contentRight>
+                <contentLeft>
+                    <Image src="./images/dre_logo.png" height="4rem"></Image>
+                </contentLeft>
+                <contentMiddle>
+                    <Title text="Home Page" textAlign="Center"></Title>
+                </contentMiddle>
+                <contentRight>
                     <Button icon="sap-icon://account" press="onAccountPress"/>
                     <Button icon="sap-icon://menu" press="onMenuPress"/>
-                </contentRight> -->
+                </contentRight>
             </Bar>
         </customHeader>
         <content>

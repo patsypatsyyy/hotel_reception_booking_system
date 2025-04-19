@@ -5,7 +5,7 @@
     xmlns="sap.m">
     <SplitContainer id="splitContainer" masterButtonText="Guest Profiles">
         <masterPages>
-            <semantic:MasterPage title="Guest Profiles">
+            <semantic:MasterPage title="Guest Profiles" showNavButton="true" navButtonPress="onNavBack">
                 <VBox>
                     <items>
                         <Table id="guestProfilesTable" items="{GuestModel>/results}" sticky="HeaderToolbar">
@@ -26,7 +26,7 @@
                                 </Column>
                             </columns>
                             <items>
-                                <ColumnListItem>
+                                <ColumnListItem type="Active" press="onPressGuestProfile">
                                     <cells>
                                         <Text text="{GuestModel>fullName}" wrapping="true"/>
                                         <Text text="{GuestModel>checkInDate}" />
@@ -41,7 +41,7 @@
 					<semantic:FilterAction press="onSemanticButtonPress"/>
 				</semantic:filter>
                 <semantic:sort>
-                    <semantic:SortAction press="onPressSortGuestProfiles"/>   
+                    <semantic:SortAction press="onPressSortGuestProfiles" tooltip="Sort Alphabetically"/>   
                 </semantic:sort>
             </semantic:MasterPage>
         </masterPages>
