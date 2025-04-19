@@ -11,7 +11,7 @@
                         <Table id="guestProfilesTable" items="{GuestModel>/results}" sticky="HeaderToolbar">
                             <headerToolbar>
                                 <OverflowToolbar>
-                                    <SearchField width="100%"></SearchField>
+                                    <SearchField width="100%" search="onSearchGuestProfiles"></SearchField>
                                 </OverflowToolbar>
                             </headerToolbar>
                             <columns>

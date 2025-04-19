@@ -3,8 +3,10 @@ sap.ui.define([
     "sap/m/MessageToast",
     "sap/ui/core/Fragment",
     "sap/ui/model/json/JSONModel",
-    "sap/ui/model/Sorter"
-], function (BaseController, MessageToast, Fragment, JSONModel, Sorter) {
+    "sap/ui/model/Sorter",
+    "sap/ui/model/Filter",
+    "sap/ui/model/FilterOperator"
+], function (BaseController, MessageToast, Fragment, JSONModel, Sorter, Filter, FilterOperator) {
     "use strict";
 
     return BaseController.extend("personal.patsy.hotel.controller.GuestProfiles", {
@@ -31,5 +33,19 @@ sap.ui.define([
             var oSorter = new Sorter("fullName", this._bDescSort, false);
             oBinding.sort(oSorter);
         },
+
+        onSearchGuestProfiles: function (oEvent) {
+            var sQuery = oEvent.getParameter("query"),
+                oTable = this.getView().byId("guestProfilesTable"),
+                oBinding = oTable.getBinding("items"),
+                aFilters = [];
+
+            if (sQuery) {
+                var oFilter = new Filter("fullName", FilterOperator.Contains, sQuery);
+                aFilters.push(oFilter);
+            }
+
+            oBinding.filter(aFilters);
+        }
     });
 });
