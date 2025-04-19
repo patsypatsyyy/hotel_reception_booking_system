@@ -10,24 +10,19 @@
     <Page id="homePage" title="Home Page">
         <customHeader>
             <Bar>
-                <contentRight>
+                <!-- <contentRight>
                     <Button icon="sap-icon://account" press="onAccountPress"/>
                     <Button icon="sap-icon://menu" press="onMenuPress"/>
-                </contentRight>
+                </contentRight> -->
             </Bar>
         </customHeader>
         <content>
             <VBox width="100%" alignItems="Center" class="sapUiSmallMarginTop">
                 <layout:Grid defaultSpan="XL6 L6 M6 S12" hSpacing="1" vSpacing="1">
                     <layout:content>
-                        <Panel height="100%" width="100%" backgroundDesign="Transparent">
-                            <VBox justifyContent="Center" height="100%">
-                                <Title text="Welcome, Juan" level="H1" titleStyle="H1"></Title>
-                                <Title text="Good morning. I hope you're having a wonderful and productive day." level="H5" titleStyle="H5"></Title>
-                            </VBox>
-                        </Panel>
+                        <core:Fragment fragmentName="personal.patsy.hotel.view.sectionFragments.greetingPanel" type="XML"/>
                         <core:Fragment fragmentName="personal.patsy.hotel.view.sectionFragments.todaySummary" type="XML"/>
-                        <VBox >
+                        <VBox>
                             <core:Fragment fragmentName="personal.patsy.hotel.view.sectionFragments.guestManagement" type="XML"/>
                             <core:Fragment fragmentName="personal.patsy.hotel.view.sectionFragments.reservations" type="XML"/>
                         </VBox>

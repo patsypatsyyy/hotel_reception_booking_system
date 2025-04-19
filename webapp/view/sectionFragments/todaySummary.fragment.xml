@@ -2,7 +2,7 @@
     xmlns:core="sap.ui.core" 
     xmlns="sap.m" 
     xmlns:layout="sap.ui.layout">
-    <Panel height="100%" width="auto">
+    <Panel height="100%" width="100%">
         <Bar design="Header">
             <contentLeft>
                 <Title text="Today's Summary" level="H5" titleStyle="H5" />

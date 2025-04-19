@@ -1,0 +1,76 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:layout="sap.ui.layout.form">
+    <Dialog id="newCheckInDialog" title="New Check-In" contentHeight="100%" contentWidth="70%">
+        <content>
+            <Panel headerText="Guest Information">
+                <layout:SimpleForm editable="true" layout="ColumnLayout" columnsL="2" columnsM="2" labelSpanL="12" labelSpanM="12">
+                    <Label text="Full Name" required="true" />
+                    <Input />
+                    <Label text="Contact Number" required="true" />
+                    <Input />
+                    <Label text="Email Address" />
+                    <Input type="Email" />
+                    <Label text="Nationality" />
+                    <Input />
+                    <Label text="Valid ID Type" />
+                    <Select>
+                        <core:Item key="Passport" text="Passport" />
+                        <core:Item key="DriversLicense" text="Driver's License" />
+                        <core:Item key="Other" text="Other" />
+                    </Select>
+                    <Label text="ID Number" />
+                    <Input />
+                    <Label text="Special Requests" />
+                    <TextArea />
+                </layout:SimpleForm>
+            </Panel>
+            <Panel headerText="Booking Details">
+                <layout:SimpleForm editable="true" layout="ColumnLayout" columnsL="2" columnsM="2" labelSpanL="12" labelSpanM="12">
+                    <Label text="Room Type" required="true" />
+                    <Select>
+                        <core:Item key="Standard" text="Standard" />
+                        <core:Item key="Deluxe" text="Deluxe" />
+                        <core:Item key="Suite" text="Suite" />
+                    </Select>
+                    <Label text="Room Number" required="true" />
+                    <Select>
+                        <!-- Items will be auto-filtered based on room type and availability -->
+                    </Select>
+                    <Label text="Booking Dates" required="true" />
+                    <DateRangeSelection delimiter="to"/>
+                    <Label text="Number of Guests" required="true" />
+                    <Input type="Number" />
+                    <Label text="Booking Source" required="true" />
+                    <Select>
+                        <core:Item key="WalkIn" text="Walk-in" />
+                        <core:Item key="Online" text="Online" />
+                        <core:Item key="Phone" text="Phone" />
+                    </Select>
+                    <Label text="Booking Reference" />
+                    <Input />
+                </layout:SimpleForm>
+            </Panel>
+            <Panel headerText="Payment Information">
+                <layout:SimpleForm editable="true" layout="ColumnLayout" columnsL="2" columnsM="2" labelSpanL="12" labelSpanM="12">
+                    <Label text="Payment Method" required="true" />
+                    <Select>
+                        <core:Item key="cash" text="Cash" />
+                        <core:Item key="creditCard" text="Credit Card" />
+                        <core:Item key="gcash" text="GCash" />
+                        <core:Item key="maya" text="Maya" />
+                    </Select>
+                    <Label text="Initial Payment" required="true" />
+                    <Input type="Number" />
+                    <Label text="Billing Notes" />
+                    <TextArea />
+                </layout:SimpleForm>
+            </Panel>
+        </content>
+        <buttons>
+            <Button text="Check-in" type="Emphasized"></Button>
+            <Button text="Clear"></Button>
+            <Button text="Close" press="onCloseDialog('newCheckIn')" />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>
