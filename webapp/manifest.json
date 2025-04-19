@@ -83,6 +83,11 @@
 					"pattern": "homepage",
 					"name": "homepage",
 					"target": "homepage"
+				},
+				{
+					"pattern": "guest-profiles",
+					"name": "GuestProfiles",
+					"target": "GuestProfiles"
 				}
 			],
 			"targets": {
@@ -93,6 +98,10 @@
 				"homepage": {
 					"viewId": "homepage",
 					"viewName": "HomePage"
+				},
+				"GuestProfiles": {
+					"viewId": "GuestProfiles",
+					"viewName": "GuestProfiles"
 				}
 			}
 		}

@@ -75,11 +75,11 @@ sap.ui.define(
 				if (sPreviousHash !== undefined) {
 					window.history.go(-1);
 				} else {
-					this.getRouter().navTo("main", {}, undefined, true);
+					this.getRouter().navTo("homepage", {}, undefined, true);
 				}
 			},
 
-			onOpenDialog: function (sDialogId) {
+			onOpenDialog: function (sDialogId, sPostOpenDialogFunction) {
 				var oView = this.getView();
 
 				if (!this[sDialogId]) {
@@ -95,14 +95,62 @@ sap.ui.define(
 
 				this[sDialogId].then(function (oDialog) {
 					oDialog.open();
-				});
+					if (sPostOpenDialogFunction) {
+						this[sPostOpenDialogFunction]();
+					}
+				}.bind(this));
 			},
 
 			onCloseDialog: function (sDialogId) {
 				this[sDialogId].then(function (oDialog) {
 					oDialog.close();
+					oDialog.destroy();
+				});
+				this[sDialogId] = null;
+			},
+
+			onClearDialog: function (oEvent) {
+				var oView = this.getView();
+				var oSource = oEvent.getSource();
+
+				oSource.getParent().getContent().forEach(function (oPanel) {
+					if (oPanel.getMetadata().getName() === "sap.m.Panel") {
+						oPanel.getContent().forEach(function (oForm) {
+							this.fnClearForm(oForm);
+						}.bind(this));
+					}
+				}.bind(this));
+			},
+
+			fnClearForm: function (oForm) {
+				oForm.getContent().forEach(function (oContent) {
+					if (oContent.getEditable && !oContent.getEditable()) {
+						return;
+					}
+					if (oContent.getMetadata().getName() === "sap.m.Input") {
+						oContent.setValue("");
+					} else if (oContent.getMetadata().getName() === "sap.m.Select") {
+						oContent.setSelectedKey("");
+					} else if (oContent.getMetadata().getName() === "sap.m.DatePicker") {
+						oContent.setDateValue(null);
+					}
 				});
 			},
+
+			fnResetForm: function (oForm) {
+				oForm.getContent().forEach(function (oContent) {
+					if (oContent.getMetadata().getName() === "sap.m.Input") {
+						oContent.setValueState("None");
+						oContent.setEditable(true);
+					} else if (oContent.getMetadata().getName() === "sap.m.Select") {
+						oContent.setValueState("None");
+						oContent.setEditable(true);
+					} else if (oContent.getMetadata().getName() === "sap.m.DatePicker") {
+						oContent.setValueState("None");
+						oContent.setEditable(true);
+					}
+				});
+			}
 		});
 	}
 );

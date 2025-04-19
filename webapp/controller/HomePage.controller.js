@@ -8,9 +8,30 @@ sap.ui.define([
 
     return BaseController.extend("personal.patsy.hotel.controller.HomePage", {
         onInit: function () {
-            var oGuestModel = new JSONModel();
-            oGuestModel.loadData("model/guests.json");
-            this.getView().setModel(oGuestModel, "GuestModel");
+            this.getRouter().getRoute("homepage").attachPatternMatched(this._onRouteMatched, this);
         },
+
+        _onRouteMatched: function (oEvent) {
+        },
+
+        fnNewGuestCheckIn: function () {
+            var oView = this.getView();
+
+            if (this.newCheckIn) {
+                oView.byId("newCheckInDialog").setTitle("New Guest Check-in");
+                oView.byId("slctBookingSource").setSelectedKey("WalkIn");
+                oView.byId("slctBookingSource").setEditable(false);
+                oView.byId("dpStart").setDateValue(new Date());
+                oView.byId("dpStart").setEditable(false);
+            }
+        },
+
+        fnNewReservation: function () {
+            var oView = this.getView();
+
+            if (this.newCheckIn) {
+                oView.byId("newCheckInDialog").setTitle("New Reservation");
+            }
+        }
     });
 });

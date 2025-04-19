@@ -1,0 +1,49 @@
+<mvc:View controllerName="personal.patsy.hotel.controller.GuestProfiles"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:table="sap.ui.table"
+    xmlns:semantic="sap.m.semantic"
+    xmlns="sap.m">
+    <SplitContainer id="splitContainer" masterButtonText="Guest Profiles">
+        <masterPages>
+            <semantic:MasterPage title="Guest Profiles">
+                <VBox>
+                    <items>
+                        <Table id="guestProfilesTable" items="{GuestModel>/results}" sticky="HeaderToolbar">
+                            <headerToolbar>
+                                <OverflowToolbar>
+                                    <SearchField width="100%"></SearchField>
+                                </OverflowToolbar>
+                            </headerToolbar>
+                            <columns>
+                                <Column>
+                                    <Text text="Name" />
+                                </Column>
+                                <Column>
+                                    <Text text="Check-in date" />
+                                </Column>
+                                <Column>
+                                    <Text text="Check-out date" />
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text text="{GuestModel>fullName}" wrapping="true"/>
+                                        <Text text="{GuestModel>checkInDate}" />
+                                        <Text text="{GuestModel>checkOutDate}" />
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </items>
+                </VBox>
+                <semantic:filter>
+					<semantic:FilterAction press="onSemanticButtonPress"/>
+				</semantic:filter>
+                <semantic:sort>
+                    <semantic:SortAction press="onPressSortGuestProfiles"/>   
+                </semantic:sort>
+            </semantic:MasterPage>
+        </masterPages>
+    </SplitContainer>
+</mvc:View>
