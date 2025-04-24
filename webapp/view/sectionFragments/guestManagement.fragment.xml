@@ -11,7 +11,7 @@
             <Title text="Guest Management" titleStyle="H4" textAlign="Center" width="100%" class="sapUiSmallMarginBottom"></Title>
             <layout:Grid defaultSpan="XL4 L4 M4 S12" hSpacing="1" vSpacing="1">
                 <layout:content>
-                    <GenericTile press="onOpenDialog('newCheckIn', 'fnNewGuestCheckIn')" header="New Guest Check-in" headerImage="sap-icon://add-employee" frameType="OneByHalf" width="100%"></GenericTile>
+                    <GenericTile press="onOpenDialog('newCheckIn', 'fnNewGuestCheckIn')" header="New Guest Check-in" headerImage="sap-icon://add-employee" frameType="OneByHalf" width="100%" tileIcon="sap-icon://appear-offline"></GenericTile>
                     <GenericTile header="Guest Check-out" headerImage="sap-icon://appear-offline" frameType="OneByHalf" width="100%"></GenericTile>
                     <GenericTile press="navTo('GuestProfiles')" header="Guest Profiles" headerImage="sap-icon://employee-lookup" frameType="OneByHalf" width="100%"></GenericTile>
                 </layout:content>

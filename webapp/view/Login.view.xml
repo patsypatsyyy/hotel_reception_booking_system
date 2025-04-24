@@ -9,10 +9,10 @@
 		formatter: 'personal/patsy/hotel/model/formatter'
 	}">
 
-	<Page id="page" showHeader="false" class="sapUiContent">
+	<Page id="page" showHeader="false">
 		<content>
 			<FlexBox height="100%" justifyContent="Center" alignItems="Center">
-				<Panel width="500px" height="550px" class="pageBackground">
+				<Panel width="500px" height="575px" class="pageBackground">
 					<VBox width="100%" height="100%" justifyContent="Center" alignItems="Center">
 						<form:SimpleForm
 							id="loginForm"

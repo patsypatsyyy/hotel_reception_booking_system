@@ -4,6 +4,10 @@ sap.ui.define(
 		"use strict";
 
 		return BaseController.extend("personal.patsy.hotel.controller.Login", {
+			onInit: function () {
+
+			},
+
 			sayHello: function () {
 				MessageBox.show("Hello World!");
 			},
