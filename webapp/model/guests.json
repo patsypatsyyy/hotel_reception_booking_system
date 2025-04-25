@@ -14,7 +14,7 @@
 			"checkOutDate": "2025-04-18",
 			"numberOfGuests": 2,
 			"bookingSource": "Online",
-			"paymentMethod": "Credit Card",
+			"paymentMethod": "creditCard",
 			"initialPayment": 5000
 		},
 		{
@@ -22,16 +22,16 @@
 			"fullName": "Jane Smith",
 			"contactNumber": "09281234567",
 			"email": "jane.smith@example.com",
-			"idType": "Driver's License",
+			"idType": "DriversLicense",
 			"idNumber": "DL567890",
 			"nationality": "Filipino",
 			"roomType": "Standard",
 			"roomNumber": "102",
-			"checkInDate": "2025-04-17",
-			"checkOutDate": "2025-04-19",
+			"checkInDate": "04/17/2025",
+			"checkOutDate": "04/19/2025",
 			"numberOfGuests": 1,
-			"bookingSource": "Walk-in",
-			"paymentMethod": "Cash",
+			"bookingSource": "WalkIn",
+			"paymentMethod": "cash",
 			"initialPayment": 2500
 		},
 		{
@@ -48,7 +48,7 @@
 			"checkOutDate": "2025-04-20",
 			"numberOfGuests": 3,
 			"bookingSource": "Phone",
-			"paymentMethod": "Credit Card",
+			"paymentMethod": "creditCard",
 			"initialPayment": 10000
 		},
 		{
@@ -65,7 +65,7 @@
 			"checkOutDate": "2025-04-17",
 			"numberOfGuests": 2,
 			"bookingSource": "Online",
-			"paymentMethod": "Maya",
+			"paymentMethod": "maya",
 			"initialPayment": 4500
 		},
 		{
@@ -82,7 +82,7 @@
 			"checkOutDate": "2025-04-20",
 			"numberOfGuests": 1,
 			"bookingSource": "Online",
-			"paymentMethod": "Credit Card",
+			"paymentMethod": "creditCard",
 			"initialPayment": 15000
 		},
 		{
@@ -90,7 +90,7 @@
 			"fullName": "Brian Reyes",
 			"contactNumber": "09201234567",
 			"email": "brian.reyes@example.com",
-			"idType": "Driver's License",
+			"idType": "DriversLicense",
 			"idNumber": "DL198273",
 			"nationality": "Filipino",
 			"roomType": "Standard",
@@ -98,8 +98,8 @@
 			"checkInDate": "2025-04-17",
 			"checkOutDate": "2025-04-19",
 			"numberOfGuests": 2,
-			"bookingSource": "Walk-in",
-			"paymentMethod": "Cash",
+			"bookingSource": "WalkIn",
+			"paymentMethod": "cash",
 			"initialPayment": 2000
 		},
 		{
@@ -116,7 +116,7 @@
 			"checkOutDate": "2025-04-21",
 			"numberOfGuests": 2,
 			"bookingSource": "Phone",
-			"paymentMethod": "GCash",
+			"paymentMethod": "gcash",
 			"initialPayment": 5500
 		},
 		{
@@ -133,7 +133,7 @@
 			"checkOutDate": "2025-04-18",
 			"numberOfGuests": 1,
 			"bookingSource": "Online",
-			"paymentMethod": "Credit Card",
+			"paymentMethod": "creditCard",
 			"initialPayment": 3000
 		},
 		{
@@ -141,7 +141,7 @@
 			"fullName": "Diana Chan",
 			"contactNumber": "09351234567",
 			"email": "diana.chan@example.com",
-			"idType": "Driver's License",
+			"idType": "DriversLicense",
 			"idNumber": "DL452198",
 			"nationality": "Chinese",
 			"roomType": "Suite",
@@ -149,8 +149,8 @@
 			"checkInDate": "2025-04-15",
 			"checkOutDate": "2025-04-18",
 			"numberOfGuests": 2,
-			"bookingSource": "Walk-in",
-			"paymentMethod": "Cash",
+			"bookingSource": "WalkIn",
+			"paymentMethod": "cash",
 			"initialPayment": 8000
 		},
 		{
@@ -167,7 +167,7 @@
 			"checkOutDate": "2025-04-16",
 			"numberOfGuests": 1,
 			"bookingSource": "Phone",
-			"paymentMethod": "Credit Card",
+			"paymentMethod": "creditCard",
 			"initialPayment": 4500
 		},
 		{
@@ -184,7 +184,7 @@
 			"checkOutDate": "2025-04-18",
 			"numberOfGuests": 2,
 			"bookingSource": "Online",
-			"paymentMethod": "Maya",
+			"paymentMethod": "maya",
 			"initialPayment": 2800
 		},
 		{
@@ -201,7 +201,7 @@
 			"checkOutDate": "2025-04-17",
 			"numberOfGuests": 1,
 			"bookingSource": "Phone",
-			"paymentMethod": "Credit Card",
+			"paymentMethod": "creditCard",
 			"initialPayment": 9000
 		},
 		{
@@ -218,7 +218,7 @@
 			"checkOutDate": "2025-04-19",
 			"numberOfGuests": 3,
 			"bookingSource": "Online",
-			"paymentMethod": "GCash",
+			"paymentMethod": "gcash",
 			"initialPayment": 6000
 		},
 		{
@@ -234,8 +234,8 @@
 			"checkInDate": "2025-04-15",
 			"checkOutDate": "2025-04-17",
 			"numberOfGuests": 1,
-			"bookingSource": "Walk-in",
-			"paymentMethod": "Cash",
+			"bookingSource": "WalkIn",
+			"paymentMethod": "cash",
 			"initialPayment": 2200
 		},
 		{
@@ -252,7 +252,7 @@
 			"checkOutDate": "2025-04-15",
 			"numberOfGuests": 2,
 			"bookingSource": "Phone",
-			"paymentMethod": "Credit Card",
+			"paymentMethod": "creditCard",
 			"initialPayment": 9500
 		},
 		{
@@ -260,7 +260,7 @@
 			"fullName": "Erwin Mendoza",
 			"contactNumber": "09132234567",
 			"email": "erwin.mendoza@example.com",
-			"idType": "Driver's License",
+			"idType": "DriversLicense",
 			"idNumber": "DL566712",
 			"nationality": "Filipino",
 			"roomType": "Deluxe",
@@ -269,7 +269,7 @@
 			"checkOutDate": "2025-04-20",
 			"numberOfGuests": 2,
 			"bookingSource": "Online",
-			"paymentMethod": "Maya",
+			"paymentMethod": "maya",
 			"initialPayment": 4700
 		},
 		{
@@ -286,7 +286,7 @@
 			"checkOutDate": "2025-04-18",
 			"numberOfGuests": 1,
 			"bookingSource": "Online",
-			"paymentMethod": "Credit Card",
+			"paymentMethod": "creditCard",
 			"initialPayment": 9700
 		},
 		{
@@ -302,8 +302,8 @@
 			"checkInDate": "2025-04-15",
 			"checkOutDate": "2025-04-17",
 			"numberOfGuests": 2,
-			"bookingSource": "Walk-in",
-			"paymentMethod": "Cash",
+			"bookingSource": "WalkIn",
+			"paymentMethod": "cash",
 			"initialPayment": 2300
 		},
 		{
@@ -320,7 +320,7 @@
 			"checkOutDate": "2025-04-17",
 			"numberOfGuests": 1,
 			"bookingSource": "Phone",
-			"paymentMethod": "Credit Card",
+			"paymentMethod": "creditCard",
 			"initialPayment": 5000
 		},
 		{
@@ -337,7 +337,7 @@
 			"checkOutDate": "2025-04-21",
 			"numberOfGuests": 3,
 			"bookingSource": "Online",
-			"paymentMethod": "Credit Card",
+			"paymentMethod": "creditCard",
 			"initialPayment": 12000
 		}
 	]

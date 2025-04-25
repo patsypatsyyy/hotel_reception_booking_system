@@ -4,46 +4,47 @@
     <Dialog id="newCheckInDialog" titleAlignment="Center" contentHeight="100%" contentWidth="70%">
         <content>
             <Panel headerText="Guest Information">
-                <layout:SimpleForm id="formGuestInfo" editable="true" layout="ColumnLayout" columnsL="2" columnsM="2" labelSpanL="12" labelSpanM="12">
+                <layout:SimpleForm id="formGuestInfo" editable="false" layout="ColumnLayout" columnsL="2" columnsM="2" labelSpanL="12" labelSpanM="12">
                     <Label text="Full Name" required="true" />
-                    <Input />
+                    <Input value="{StaticModel>/Guest/fullName}"/>
                     <Label text="Contact Number" required="true" />
-                    <Input />
+                    <Input value="{StaticModel>/Guest/contactNumber}"/>
                     <Label text="Email Address" />
-                    <Input type="Email" />
+                    <Input value="{StaticModel>/Guest/email}" type="Email" />
                     <Label text="Nationality" />
-                    <Input />
+                    <Input value="{StaticModel>/Guest/nationality}"/>
                     <Label text="Valid ID Type" />
-                    <Select>
+                    <Select selectedKey="{StaticModel>/Guest/idType}">
                         <core:Item key="Passport" text="Passport" />
                         <core:Item key="DriversLicense" text="Driver's License" />
                         <core:Item key="Other" text="Other" />
                     </Select>
                     <Label text="ID Number" />
-                    <Input />
+                    <Input value="{StaticModel>/Guest/idNumber}"/>
                     <Label text="Special Requests" />
                     <TextArea />
                 </layout:SimpleForm>
             </Panel>
             <Panel headerText="Booking Details">
-                <layout:SimpleForm  id="formBookingDetails" editable="true" layout="ColumnLayout" columnsL="2" columnsM="2" labelSpanL="12" labelSpanM="12">
+                <layout:SimpleForm  id="formBookingDetails" editable="false" layout="ColumnLayout" columnsL="2" columnsM="2" labelSpanL="12" labelSpanM="12">
                     <Label text="Room Type" required="true" />
-                    <Select>
+                    <Select selectedKey="{StaticModel>/Guest/roomType}">
                         <core:Item key="Standard" text="Standard" />
                         <core:Item key="Deluxe" text="Deluxe" />
                         <core:Item key="Suite" text="Suite" />
                     </Select>
                     <Label text="Room Number" required="true" />
-                    <Select>
-                        <!-- Items will be auto-filtered based on room type and availability -->
-                    </Select>
+                    <Input value="{StaticModel>/Guest/roomNumber}"></Input>
+                    <!-- <Select>
+                        Items will be auto-filtered based on room type and availability
+                    </Select> -->
                     <Label text="Booking Dates" required="true" />
-                    <DatePicker id="dpStart" placeholder="Start Date" />
-                    <DatePicker id="dpEnd" placeholder="End Date" />
+                    <Input id="dpStart" placeholder="Start Date" value="{StaticModel>/Guest/checkInDate}"/>
+                    <Input id="dpEnd" placeholder="End Date" value="{StaticModel>/Guest/checkOutDate}"/>
                     <Label text="Number of Guests" required="true" />
-                    <Input type="Number" />
+                    <Input value="{StaticModel>/Guest/numberOfGuests}" type="Number" />
                     <Label text="Booking Source" required="true" />
-                    <Select id="slctBookingSource">
+                    <Select id="slctBookingSource" selectedKey="{StaticModel>/Guest/bookingSource}">
                         <core:Item key="WalkIn" text="Walk-in" />
                         <core:Item key="Online" text="Online" />
                         <core:Item key="Phone" text="Phone" />
@@ -53,25 +54,28 @@
                 </layout:SimpleForm>
             </Panel>
             <Panel headerText="Payment Information">
-                <layout:SimpleForm  id="formPaymentInfo" editable="true" layout="ColumnLayout" columnsL="2" columnsM="2" labelSpanL="12" labelSpanM="12">
+                <layout:SimpleForm  id="formPaymentInfo" editable="false" layout="ColumnLayout" columnsL="2" columnsM="2" labelSpanL="12" labelSpanM="12">
                     <Label text="Payment Method" required="true" />
-                    <Select>
+                    <Select selectedKey="{StaticModel>/Guest/paymentMethod}">
                         <core:Item key="cash" text="Cash" />
                         <core:Item key="creditCard" text="Credit Card" />
                         <core:Item key="gcash" text="GCash" />
                         <core:Item key="maya" text="Maya" />
                     </Select>
                     <Label text="Initial Payment" required="true" />
-                    <Input type="Number" />
+                    <Input value="{StaticModel>/Guest/initialPayment}" type="Number" />
                     <Label text="Billing Notes" />
                     <TextArea />
                 </layout:SimpleForm>
             </Panel>
         </content>
         <buttons>
-            <Button text="Check-in" type="Emphasized"></Button>
-            <Button text="Clear" press="onClearDialog"></Button>
-            <Button text="Close" press="onCloseDialog('newCheckIn')" />
+            <Button text="Check-in" id="btnCheckIn" visible="false" press="onPressCheckIn" type="Emphasized"></Button>
+            <Button text="Edit" id="btnEditGuestDlg" visible="false" press="onPressEditGuest($event, 'newCheckIn')" icon="sap-icon://edit"></Button>
+            <Button text="Save" id="btnSaveGuestChange" visible="false" press="onCloseDialog('newCheckIn')" icon="sap-icon://save"></Button>
+            <Button text="Cancel" id="btnCancelChange" visible="false" press="onPressCancelChange('newCheckIn')" icon=""></Button>
+            <Button text="Clear" id="btnClearDlg" visible="false" press="onClearDialog"></Button>
+            <Button text="Close" id="btnCloseDlg" visible="true" press="onCloseDialog('newCheckIn')" />
         </buttons>
     </Dialog>
 </core:FragmentDefinition>

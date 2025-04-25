@@ -79,7 +79,7 @@ sap.ui.define(
 				}
 			},
 
-			onOpenDialog: function (sDialogId, sPostOpenDialogFunction) {
+			onOpenDialog: function (oEvent, sDialogId, sPostOpenDialogFunction) {
 				var oView = this.getView();
 
 				if (!this[sDialogId]) {
@@ -96,17 +96,19 @@ sap.ui.define(
 				this[sDialogId].then(function (oDialog) {
 					oDialog.open();
 					if (sPostOpenDialogFunction) {
-						this[sPostOpenDialogFunction]();
+						this[sPostOpenDialogFunction](oEvent);
 					}
 				}.bind(this));
 			},
 
 			onCloseDialog: function (sDialogId) {
-				this[sDialogId].then(function (oDialog) {
+				this[sDialogId].then(function(oDialog) {
+					oDialog.attachAfterClose(function() {
+						oDialog.destroy();
+						this[sDialogId] = null;
+					}.bind(this));
 					oDialog.close();
-					oDialog.destroy();
-				});
-				this[sDialogId] = null;
+				}.bind(this));
 			},
 
 			onClearDialog: function (oEvent) {
@@ -127,11 +129,13 @@ sap.ui.define(
 					if (oContent.getEditable && !oContent.getEditable()) {
 						return;
 					}
-					if (oContent.getMetadata().getName() === "sap.m.Input") {
+					if (typeof oContent.setValue === "function") {
 						oContent.setValue("");
-					} else if (oContent.getMetadata().getName() === "sap.m.Select") {
+					}
+					if (typeof oContent.setSelectedKey === "function") {
 						oContent.setSelectedKey("");
-					} else if (oContent.getMetadata().getName() === "sap.m.DatePicker") {
+					}
+					if (typeof oContent.setDateValue === "function") {
 						oContent.setDateValue(null);
 					}
 				});
@@ -139,18 +143,30 @@ sap.ui.define(
 
 			fnResetForm: function (oForm) {
 				oForm.getContent().forEach(function (oContent) {
-					if (oContent.getMetadata().getName() === "sap.m.Input") {
-						oContent.setValueState("None");
-						oContent.setEditable(true);
-					} else if (oContent.getMetadata().getName() === "sap.m.Select") {
-						oContent.setValueState("None");
-						oContent.setEditable(true);
-					} else if (oContent.getMetadata().getName() === "sap.m.DatePicker") {
+					if (typeof oContent.setValueState === "function" && typeof oContent.setEditable === "function") {
 						oContent.setValueState("None");
 						oContent.setEditable(true);
 					}
 				});
-			}
+			},
+
+			fnDisableDialogForms: function (sDialog) {
+				this[sDialog].then(function(oDialog) {
+					var aContents = oDialog.getContent();
+
+					aContents.forEach(function (oPanel) {
+						if (oPanel.getMetadata().getName() === "sap.m.Panel") {
+							oPanel.getContent().forEach(function (oForm) {
+								oForm.getContent().forEach(function(oField) {
+									if (oField.getEditable) {
+										oField.setEditable(false);
+									}
+								});
+							}.bind(this));
+						}
+					}.bind(this));
+				});
+			},
 		});
 	}
 );

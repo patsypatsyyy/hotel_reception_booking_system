@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<core:FragmentDefinition xmlns:table="sap.ui.table"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Panel height="447px" class="sapUiSmallMarginTop">
+        <Title text="Guest List" titleStyle="H4" textAlign="Center" width="100%" class="sapUiSmallMarginBottom"></Title>
+        <VBox width="100%" alignItems="Center" height="300px">
+            <Table items="{GuestModel>/results}" class="sapUiSmallMarginBottom" alternateRowColors="true">
+                <headerToolbar>
+                    <Toolbar>
+                        <SearchField width="100%" placeholder="Search" liveChange="onSearch"></SearchField>
+                        <ToolbarSpacer></ToolbarSpacer>
+                        <Button icon="sap-icon://filter" press="" tooltip="Filter"></Button>
+                        <Button icon="sap-icon://action" press="navTo('GuestProfiles')" tooltip="Go to Guest Profiles"></Button>
+                    </Toolbar>
+                </headerToolbar>
+                <columns>
+                    <Column >
+                        <Text text="Name"></Text>
+                    </Column>
+                    <Column >
+                        <Text text="Room"></Text>
+                    </Column>
+                    <Column >
+                        <Text text="Check-in"></Text>
+                    </Column>
+                    <Column >
+                        <Text text="Booking"></Text>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem type="Active" press="onOpenDialog($event, 'newCheckIn', 'fnGetSelectedGuest')">
+                        <cells>
+                            <Text text="{GuestModel>fullName}" wrapping="true"/>
+                            <Text text="{GuestModel>roomNumber}" />
+                            <Text text="{GuestModel>checkInDate}" />
+                            <Text text="{GuestModel>bookingSource}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </VBox>
+    </Panel>
+</core:FragmentDefinition>

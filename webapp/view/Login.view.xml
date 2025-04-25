@@ -40,7 +40,7 @@
 									<Link text="Forgot Password?" press="onForgotPasswordPress" />
 								</items>
 							</HBox>
-							<Button text="Login" press="onLoginPress" type="Emphasized" width="100%" class="sapUiSmallMarginTop"/>
+							<Button text="Login" press="navTo('homepage')" type="Emphasized" width="100%" class="sapUiSmallMarginTop"/>
 							<Button text="Register" press="onRegisterPress" width="100%" />
 						</form:SimpleForm>
 					</VBox>

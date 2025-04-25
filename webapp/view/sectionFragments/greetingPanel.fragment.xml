@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <core:FragmentDefinition xmlns="sap.m"
     xmlns:core="sap.ui.core">
-    <Panel height="100%" width="100%" backgroundDesign="Transparent">
+    <Panel height="296px" width="100%" backgroundDesign="Transparent">
         <VBox justifyContent="Center" height="100%" width="100%">
             <Title text="Welcome, Juan" level="H1" titleStyle="H1" wrapping="true"></Title>
             <Title text="Good morning. I hope you're having a wonderful and productive day." level="H5" titleStyle="H5" wrapping="true"></Title>
