@@ -6,17 +6,15 @@
     xmlns:tnt="sap.tnt"
     xmlns:u="sap.ui.unified"
     xmlns:layout="sap.ui.layout">
-    <Panel class="sapUiSmallMarginTop">
+    <Panel class="">
         <VBox >
             <Title text="Reservations" titleStyle="H4" textAlign="Center" width="100%" class="sapUiSmallMarginBottom"></Title>
-            <layout:Grid defaultSpan="XL4 L4 M4 S12" hSpacing="1" vSpacing="1">
+            <layout:Grid defaultSpan="XL6 L6 M6 S12" hSpacing="1" vSpacing="1">
                 <layout:content>
                     <GenericTile press="onOpenDialog($event, 'newCheckIn', 'fnNewReservation')" header="New Reservation" headerImage="sap-icon://bookmark" frameType="OneByHalf" width="100%"></GenericTile>
-                    <GenericTile header="View/Edit Bookings" headerImage="sap-icon://detail-view" frameType="OneByHalf" width="100%"></GenericTile>
                     <GenericTile header="Cancel Reservation" headerImage="sap-icon://bookmark-2" frameType="OneByHalf" width="100%"></GenericTile>
                 </layout:content>
             </layout:Grid>
-            <u:Calendar id="calendar" months="1" width="100%" showCurrentDateButton="true"/>
         </VBox>
     </Panel>
 </core:FragmentDefinition>

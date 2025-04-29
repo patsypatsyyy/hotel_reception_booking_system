@@ -2,13 +2,13 @@
 <core:FragmentDefinition xmlns="sap.m"
     xmlns:core="sap.ui.core"
     xmlns:layout="sap.ui.layout">
-    <Panel >
+    <Panel class="sapUiSmallMarginTop">
         <Title text="Room Management" titleStyle="H4" textAlign="Center" width="100%" class="sapUiSmallMarginBottom"></Title>
-        <layout:Grid defaultSpan="XL6 L6 M6 S12" hSpacing="1" vSpacing="1">
+        <layout:Grid defaultSpan="XL4 L4 M4 S12" hSpacing="1" vSpacing="1">
             <layout:content>
                 <GenericTile header="Room Status (Available, Occupied, Cleaning, Maintenance)" headerImage="sap-icon://message-information" frameType="OneByHalf" width="100%"></GenericTile>
                 <GenericTile header="Assign Rooms" headerImage="sap-icon://activity-assigned-to-goal" frameType="OneByHalf" width="100%"></GenericTile>
-                <GenericTile header="Move Guests/Room Transfers" headerImage="sap-icon://citizen-connect" frameType="OneByHalf" width="100%"></GenericTile>
+                <!-- <GenericTile header="Move Guests/Room Transfers" headerImage="sap-icon://citizen-connect" frameType="OneByHalf" width="100%"></GenericTile> -->
                 <GenericTile header="Room Types &amp; Rates" headerImage="sap-icon://capital-projects" frameType="OneByHalf" width="100%"></GenericTile>
             </layout:content>
         </layout:Grid>

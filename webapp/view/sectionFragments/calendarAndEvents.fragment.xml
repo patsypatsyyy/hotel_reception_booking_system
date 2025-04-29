@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<core:FragmentDefinition xmlns:f="sap.f"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:card="sap.f.cards"
+    xmlns:tnt="sap.tnt"
+    xmlns:u="sap.ui.unified"
+    xmlns:layout="sap.ui.layout">
+    <Panel class="sapUiSmallMarginTop">
+        <VBox >
+            <Title text="Events" titleStyle="H4" textAlign="Center" width="100%" class="sapUiSmallMarginBottom"></Title>
+            <u:Calendar id="calendar" months="1" width="100%" showCurrentDateButton="true"/>
+        </VBox>
+    </Panel>
+</core:FragmentDefinition>

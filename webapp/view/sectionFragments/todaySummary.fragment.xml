@@ -2,19 +2,18 @@
     xmlns:core="sap.ui.core" 
     xmlns="sap.m" 
     xmlns:layout="sap.ui.layout">
-    <Panel height="100%" width="100%">
-        <Bar design="Header">
-            <contentLeft>
-                <Title text="Today's Summary" level="H5" titleStyle="H5" />
-            </contentLeft>
-            <contentRight>
-                <Button icon="sap-icon://action-settings" tooltip="Customize Panel"></Button>
-            </contentRight>
-        </Bar>
+    <Panel height="100%" width="100%" backgroundDesign="Transparent">
+        <layoutData>
+            <layout:GridData span="XL12 L12 M12 S12"/>
+        </layoutData>
+        <VBox justifyContent="Center" class="sapUiSmallMargin">
+            <Title text="Welcome, Juan" level="H1" titleStyle="H1" wrapping="true"></Title>
+            <Title text="Good morning. I hope you're having a wonderful and productive day." level="H5" titleStyle="H5" wrapping="true"></Title>
+        </VBox>
         <Carousel backgroundDesign="Transparent" showPageIndicator="false" loop="true" class="sapUiTinyMarginTop" height="auto">
-            <layout:Grid class="sapUiTinyMarginTop sapUiSmallMarginBottom" hSpacing="1" vSpacing="1" defaultSpan="XL4 L4 M4 S12">
+            <layout:Grid class="sapUiTinyMarginTop sapUiSmallMarginBottom" hSpacing="1" vSpacing="1" defaultSpan="XL4 L4 M12 S12">
                 <layout:content>
-                    <GenericTile class="sapUiTinyMarginTop" header="Rooms Available" subheader="This week" width="100%">
+                    <GenericTile class="sapUiTinyMarginTop" header="Rooms Available" subheader="This week" width="100%" frameType="TwoByOne">
                         <TileContent unit="Rooms">
                             <NumericContent value="15" valueColor="Good" icon="sap-icon://bbyd-active-sales" withMargin="false" />
                         </TileContent>
@@ -31,7 +30,7 @@
                     </GenericTile>
                 </layout:content>
             </layout:Grid>
-            <layout:Grid class="sapUiTinyMarginTop sapUiSmallMarginBottom" hSpacing="1" vSpacing="1" defaultSpan="XL4 L4 M4 S12">
+            <layout:Grid class="sapUiTinyMarginTop sapUiSmallMarginBottom" hSpacing="1" vSpacing="1" defaultSpan="XL4 L4 M12 S12">
                 <layout:content>
                     <GenericTile class="sapUiTinyMarginTop tileLayout" header="Pending Reservations" subheader="This week" width="100%">
                         <TileContent unit="Reservations">
